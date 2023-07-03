@@ -17,11 +17,14 @@ async function bootstrap() {
 		})
 	);
 
+	const PORT = process.env.PORT ?? 3000;
+	console.log(PORT)
+
 
 	// El operador ?? devuelve el valor del lado derecho si el valor del lado izquierdo es nulo o undefined
 	// Y viceversa, entonces como no encuentra el puerto en env regresa el 3000
 	// Pero al subirlo a prod va a tomar el valor de la izq
-	await app.listen(process.env.PORT ?? 3000);
+	await app.listen(PORT);
 }
 bootstrap();
 
